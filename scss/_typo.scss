@@ -1,0 +1,22 @@
+//
+// Moacols Typo
+//
+
+body {
+    font-family: $font-family
+}
+
+h1 {
+    font-size: $h1-size;
+    font-variant: $h1-font-variant;
+    letter-spacing:  $h1-letter-spacing;
+    color: $h1-color;  
+    margin: $h1-margin;
+    width: $h1-width; 
+}
+
+p {
+    font-size: $p-size;
+    color: $p-color;   
+}
+               

@@ -1,0 +1,254 @@
+//
+// Moacols Nav
+//
+
+label.burger {
+    display: block;
+    width: 75px;
+    height: 50px;
+    position: absolute;
+    border-radius: 4px;
+    right: 0;
+    z-index: 999;
+}
+
+input#burger {
+    display: none
+}
+
+
+.line {
+    position: absolute;
+    right: 15px;
+    height: 4px;
+    width: 35px;
+    background: #fff;
+    border-radius: 2px;
+    display: block;
+    transition: 0.5s;
+    transform-origin: center;
+}
+
+.line:nth-child(1) {
+    top: 12px;
+}
+
+.line:nth-child(2) {
+    top: 24px;
+}
+
+.line:nth-child(3) {
+    top: 36px;
+}
+
+#burger:checked + .burger .line:nth-child(1) {
+    transform: translateY(12px) rotate(-45deg);
+}
+
+#burger:checked + .burger .line:nth-child(2) {
+    opacity: 0;
+}
+
+#burger:checked + .burger .line:nth-child(3) {
+    transform: translateY(-12px) rotate(45deg);
+}
+
+
+input#burger:checked ~ ul.level_1 {
+    animation: fadeIn 1.2s;
+    display: block;
+}
+
+input#burger:not(:checked) ~ ul.level_1 {
+    display: None;
+}
+
+ul.level_1 label.burger {
+    display: none;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+
+
+
+
+
+
+nav {
+
+    line-height: $nav-line-height;
+    float: left;
+    position: relative;
+    width: 100%;
+    background: $nav-background-color;
+    color: $nav-color;
+    font-size: $nav-font-size;
+    text-transform: $nav-text-transform;
+    letter-spacing: $nav-letter-spacing;
+    opacity: $nav-opacity;
+    -webkit-box-shadow: $nav-border;
+    -moz-box-shadow: $nav-border;
+    box-shadow: $nav-border;
+
+
+    ul {
+        margin: $nav-mobile-margin;
+        list-style-type: none;
+        padding: 0;
+
+
+        li {
+            float: left;
+            position: relative;
+            margin: $nav-li-margin;
+            width: 100%;
+
+
+            a {
+                color: $nav-a-color;
+                text-decoration: none;
+
+
+            }
+
+            ul {
+
+                margin: 0 1rem;
+
+                li {
+                    margin: 0;
+
+                }
+            }
+        }
+
+    }
+
+
+
+}
+
+.invisible {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px
+}
+
+@media (min-width: 768px) {
+
+    label.burger {
+        display: none;
+    }
+
+
+    input#burger:not(:checked) ~ ul.level_1,
+    input#burger:checked ~ ul.level_1 {
+        display: block;
+    }
+
+
+
+    nav {
+
+        background: $nav-background-desktop-color;
+
+        ul {
+
+            margin: $nav-desktop-margin;
+
+
+            li {
+
+                width: inherit;
+
+
+                a:hover {
+                    opacity: $nav-li-a-hover-opacity;
+                }
+
+                a:hover > ul,
+                a:active > ul {
+                    display: block;
+                }
+
+
+
+                &.submenu a:after {
+                    content: " ▼";
+                    font-size: .5rem;
+                    vertical-align:middle;
+                    padding-left: .5rem;
+
+
+                }
+
+
+                &.submenu ul li a:after,
+                    {
+                    content: "";
+                }
+
+
+
+
+
+
+
+                ul {
+                    display: none;
+
+
+                    li {
+                        position: absolute;
+                        left: -1rem;
+                        background: $nav-background-desktop-color;
+                        padding: 0 1rem;
+
+
+                    }
+
+
+                }
+
+
+                &:hover ul {
+                    display: block;
+                }
+
+
+
+
+
+            }
+
+
+
+
+
+
+        }
+
+
+
+
+
+
+
+
+    }
+
+}

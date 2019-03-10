@@ -1,0 +1,23 @@
+//
+// Moacols Header
+//
+
+.#{$header-class} {
+    background: $header-background-image;
+    background-size: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding-top: $header-paddding-top;
+    text-align: $header-text-align;
+    color: $header-color;
+}
+
+.#{$header-class} h1 {
+    text-shadow: $h1-header-shadow;
+    color: $header-color;
+}
+
+.#{$header-class} p {
+
+    color: $header-color;
+}

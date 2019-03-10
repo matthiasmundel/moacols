@@ -1,0 +1,16 @@
+{
+  "name": "moacols",
+  "version": "0.8.0",
+  "description": "Easy CSS Framework",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Matthias Mundel",
+  "license": "ISC",
+  "devDependencies": {
+    "gulp": "^4.0.0",
+    "gulp-csso": "^3.0.1",
+    "gulp-sass": "^4.0.2"
+  }
+}
